@@ -1,6 +1,11 @@
 # Detecting
  The platform for object detection research
  
+ 
+[![TensorFlow 2.2](https://img.shields.io/badge/TensorFlow-2.2-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.2.0)
+[![Python 3.6](https://img.shields.io/badge/Python-3.6-3776AB)](https://www.python.org/downloads/release/python-360/)
+ 
+ 
  # COCO 验证集实测结果
 | Detection Model | Backbone | Input resolution |  AP | AP<sub>50</sub> | AP<sub>75</sub> | AP<sub>S</sub> | AP<sub>M</sub> | AP<sub>L</sub> |
 | :---- | :----: | :----: | :----: | :----: |  :----: | :----: | :----: | :----: |
