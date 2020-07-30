@@ -2,8 +2,8 @@
  The platform for object detection research
  
  
-  | 水果        | 价格    |  数量  |
-  | --------   | -----:   | :----: |
-  | 香蕉        | $1      |   5    |
-  | 苹果        | $1      |   6    |
-  | 草莓        | $1      |   7    |
+| Detection Model | Backbone | Input resolution |  AP |
+| :---- | :----: | :----: | :-------: |
+| Key 1 | Value 1 |  Key 1 | Value 1 |
+| Key 2 | Value 2 | Key 2 | Value 2  |
+| Key 3 | Value 3 | Key 3 | Value 3 |
