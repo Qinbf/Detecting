@@ -49,9 +49,77 @@ model.predict_show('test_images/000000018380.jpg')
 ```
 <img  src="http://www.ai-xlab.com/files/default/2020/08-04/1559346f2820358083.jpg" width="100%" height="100%">
 
+
+------------------
+## 训练新模型
+使用Detecting训练自己的数据可以按照VOC数据集的格式先对数据进行标注。下面把VOC数据集看成是我们自己标注好的新数据集。
+
+[VOC训练集下载](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200803100327-c9y8o7303dsgsoco?attname=VOCtrainval_06-Nov-2007.tar&e=1596533588&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:eNBMJWzJvAXLUoMzn4sqBTyf60k=)
+
+[VOC测试集下载](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200803100902-7egidf4rs2kggggg?attname=VOCtest_06-Nov-2007.tar&e=1596533617&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:TLRRBk3i0LerAb2XN4DDjnAs4cw=)
+
+理论上训练集和测试集可以存放在任意位置，不过为了方便，大家可以参考我下面介绍的方式。我们可以新建一个datasets文件夹，然后把VOC训练集和测试集都放在datasets中，文件结构如下：
+
+```
+datasets/
+└── VOC
+    ├── test
+    │   └── VOC2007
+    │       ├── Annotations
+    │       ├── ImageSets
+    │       ├── JPEGImages
+    │       ├── SegmentationClass
+    │       └── SegmentationObject
+    └── train
+        └── VOC2007
+            ├── Annotations
+            ├── ImageSets
+            ├── JPEGImages
+            ├── SegmentationClass
+            └── SegmentationObject
+```
+Annotations文件夹中保存这图片的标注，ImageSets文件夹保存这图片。我们可以自定义一个'train.yml'配置文件，文件内容如下：
+```
+DATASETS:
+  NAMES: ('MYDATA')
+  IMAGE_DIR: ('datasets/VOC/train/VOC2007/JPEGImages')
+  LABEL_DIR: ('datasets/VOC/train/VOC2007/Annotations')
+  SCALE: (1024, 1024)
+
+MODEL:
+  BACKBONE: 'resnet101'
+  WEIGHTS: 'COCO'
+  INPUT_SHAPE: (1024, 1024)
+  ANCHOR_SCALES: (64, 128, 256, 512)
+  ANCHOR_FEATURE_STRIDES: (16, 16, 16, 16)
+```
+NAMES: ('MYDATA')表示训练自己的数据集
+
+NAMES: ('COCO')表示训练'COCO'数据集
+
+NAMES: ('VOC')表示训练'VOC'数据集
+
+IMAGE_DIR: 设置图片路径
+
+LABEL_DIR: 设置标注路径
+
+SCALE: 生成器产生的图片尺寸
+
+BACKBONE: 模型基本分类器
+
+WEIGHTS: 模型权值。WEIGHTS如果为'COCO'或'VOC'表示模型使用'COCO'或'VOC'数据集训练得到
+；WEIGHTS如果为'None'表示定义一个没有训练过的新模型；WEIGHTS如果为一个路径，表示从该路径载入训练好的模型参数
+
+INPUT_SHAPE: 表示模型输入图片大小
+
+ANCHOR_SCALES: anchors的大小
+
+ANCHOR_FEATURE_STRIDES: anchors的步长
+
 - **模型训练**
 
 通常来说模型训练也只需要几行代码
+
 ```python
 from detecting.build.fasterrcnn import FasterRCNNModel
 from detecting.datasets.datasets import load_tf_dataset
@@ -69,34 +137,6 @@ model.fit(tf_dataset)
 本项目最重要的文件是detecting/config/defaults.py，里面保存着所有默认配置信息。我们可以自定义"*.yml"文件，用于修改默认配置信息。
 
 更多使用方法可以查看tutorial中的内容以及源代码。
-
-------------------
-## 训练新模型
-使用Detecting训练自己的数据可以按照VOC数据集的格式先对数据进行标注。下面把VOC数据集看成是我们自己标注好的新数据集。
-
-[VOC训练集下载](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200803100327-c9y8o7303dsgsoco?attname=VOCtrainval_06-Nov-2007.tar&e=1596533588&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:eNBMJWzJvAXLUoMzn4sqBTyf60k=)
-
-[VOC测试集下载](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200803100902-7egidf4rs2kggggg?attname=VOCtest_06-Nov-2007.tar&e=1596533617&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:TLRRBk3i0LerAb2XN4DDjnAs4cw=)
-
-理论上训练集和测试集可以存放在任意位置，不过为了方便，大家可以参考我下面介绍的方式。我们可以新建一个datasets文件夹，然后把VOC训练集和测试集都放在datasets中，文件结构如下：
-
-datasets/
-└── VOC
-    ├── test
-    │   └── VOC2007
-    │       ├── Annotations
-    │       ├── ImageSets
-    │       ├── JPEGImages
-    │       ├── SegmentationClass
-    │       └── SegmentationObject
-    └── train
-        └── VOC2007
-            ├── Annotations
-            ├── ImageSets
-            ├── JPEGImages
-            ├── SegmentationClass
-            └── SegmentationObject
-
 
 ------------------
  ## VOC 测试集实测结果
