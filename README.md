@@ -38,7 +38,7 @@ sudo python setup.py install
 
 通常来说模型预测只需要几行代码
 ```python
-from detecting.build.fasterrcnn import FasterRCNNModelplot_model
+from detecting.build.fasterrcnn import FasterRCNNModel
 # 下载并载入预训练模型
 model = FasterRCNNModel(backbone='resnet101', weights='COCO', input_shape=(1024, 1024))
 # 预测结果并显示
