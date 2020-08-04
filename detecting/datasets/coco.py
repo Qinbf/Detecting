@@ -36,9 +36,9 @@ class CocoDataSet(object):
             std: 图片标准差
             scale: 图片大小
         '''
-        # subset必须为['train', 'val']
-        if subset not in ['train', 'val']:
-            raise AssertionError('subset must be "train" or "val".')
+        # subset必须为['train', 'val', 'test']
+        if subset not in ['train', 'val', 'test']:
+            raise AssertionError('subset must be "train" "val" or "test".')
         if not image_dir:
             # 图片保存路径
             self.image_dir = "{}/{}2017".format(dataset_dir, subset)

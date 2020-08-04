@@ -85,8 +85,7 @@ _C.DATASETS = CN()
 _C.DATASETS.NAMES = ('COCO')
 # 数据集根目录
 _C.DATASETS.ROOT_DIR = ('./datasets/COCO2017')
-# VOC数据集为'train'or'test'
-# COCO数据集为'train'or'val'
+# 'train','test' or 'val'
 _C.DATASETS.SUBSET = ('val')
 # 自定义数据类别
 # 搭建模型的时候会根据类别数量来定义最后的分类数量
