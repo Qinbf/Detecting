@@ -47,7 +47,7 @@ class cosine_decay_with_warmup(tf.keras.optimizers.schedules.LearningRateSchedul
         # 基础学习率
         self.learning_rate_base = cfg.SOLVER.BASE_LR
         # 总的训练次数
-        self.total_steps = cfg.SOLVER.TOTAL_STEP
+        self.total_steps = cfg.SOLVER.TOTAL_STEPS
         # warmup学习率
         self.warmup_learning_rate = cfg.SOLVER.WARMUP_LEARNING_RATE
         # warmup步数

@@ -138,7 +138,7 @@ class FasterRCNNModel():
         # 设置优化器
         optimizer = set_optimizer(self.cfg)
         # 总的训练次数
-        total_steps = self.cfg.SOLVER.TOTAL_STEP
+        total_steps = self.cfg.SOLVER.TOTAL_STEPS
         # loss记录
         total_loss_history = []
         rpn_class_loss_h=[]

@@ -177,9 +177,9 @@ def imdenormalize(norm_img, mean, std):
 # Utility Functions for Data Formatting
 #
 #######################################
-# 获得原始图片
+# 获得原始图片，一个解析一张图片
 def get_original_image(img, img_meta, 
-                       mean=(0, 0, 0), std=(1, 1, 1)):
+                       mean=(123.68,116.779,103.939), std=(1, 1, 1)):
     '''Recover the origanal image.
     
     Args

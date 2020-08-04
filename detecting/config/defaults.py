@@ -116,7 +116,7 @@ _C.DATASETS.SCALE = (1024, 1024)
 # -----------------------------------------------------------------------------
 _C.SOLVER = CN()
 # 总的训练次数
-_C.SOLVER.TOTAL_STEP = 100000
+_C.SOLVER.TOTAL_STEPS = 100000
 # 批次大小
 _C.SOLVER.BATCH_SIZE = 1
 # 基本学习率

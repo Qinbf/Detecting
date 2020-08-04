@@ -184,3 +184,20 @@ def compute_ap(recall, precision):
     # (mrec[i + 1] - mrec[i]) * mpre[i + 1]一段面积
     ap = np.sum((mrec[i + 1] - mrec[i]) * mpre[i + 1])
     return ap     
+
+# 评估并打印结果
+def eval_show(model, generator, iou_threshold=0.5):
+    # 获得每个类别ap字典，每个类别标注数量字典
+    average_precisions,classes_num_annotations = evaluate(model,generator,iou_threshold)
+    # 打印每个类别的ap，以及标签数量
+    for label, ap in average_precisions.items():
+        print(label+':{:.4f}'.format(ap),'  num:',classes_num_annotations[label])
+    # 计算权值平均
+    total_num = 0
+    classes_ap = []
+    for label, ap in average_precisions.items():
+        # 数量
+        num = classes_num_annotations[label]
+        total_num += num
+        classes_ap.append(ap*num)
+    print('mAP:{:.4f}'.format(sum(classes_ap) / total_num))

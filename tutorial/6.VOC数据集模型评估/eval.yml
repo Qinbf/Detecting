@@ -1,0 +1,13 @@
+DATASETS:
+  NAMES: ('VOC')
+  SUBSET: ('test')
+  ROOT_DIR: ('../../datasets/VOC')
+  SCALE: (1024, 1024)
+
+MODEL:
+  BACKBONE: 'resnet101'
+  WEIGHTS: '../../weights/fasterrcnn_resnet101_voc.h5'
+  INPUT_SHAPE: (1024, 1024)
+  ANCHOR_SCALES: (64, 128, 256, 512)
+  ANCHOR_FEATURE_STRIDES: (16, 16, 16, 16)
+
