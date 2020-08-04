@@ -12,6 +12,8 @@ GitHub:[https://github.com/Qinbf/Detecting](https://github.com/Qinbf/Detecting)
 
 如果有很多人喜欢Detecting这个项目的话，我会出一个免费的视频从头到尾讲解这个目标检测项目是如何做出来的。（一行一行代码讲，会讲到所有细节）
 
+项目中肯定存在bug和不足，大家在使用时遇到问题或者有好的想法可以给我反馈。
+
  ------------------
 
  ## 安装
@@ -78,7 +80,7 @@ datasets/
             ├── SegmentationClass
             └── SegmentationObject
 ```
-Annotations文件夹中保存这图片的标注，ImageSets文件夹保存这图片。我们可以自定义一个'train.yml'配置文件，文件内容如下：
+Annotations文件夹中保存这图片的标注，ImageSets文件夹保存这图片。我们可以自定义一个'train.yml'配置文件，配置文件内容如下：
 ```
 DATASETS:
   NAMES: ('MYDATA')
