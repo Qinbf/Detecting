@@ -1,0 +1,18 @@
+IF_FPN: False
+
+DATASETS:
+  NAMES: ('MYDATA')
+  SUBSET: ('train')
+  CLASSES: ('__background__',  
+            'knife','scissors','lighter','zippooil','pressure',
+            'slingshot','handcuffs','nailpolish','powerbank','firecrackers')
+  ROOT_DIR: ('./datasets/MYDATA')
+  SCALE: (1024, 1024)
+
+MODEL:
+  BACKBONE: 'resnet101'
+  PRETRAIN_PATH: './weights/fasterrcnn_resnet101.h5'
+  ANCHOR_SCALES: (64, 128, 256, 512)
+  ANCHOR_FEATURE_STRIDES: (16, 16, 16, 16)
+  RPN_PROPOSAL_NMS_TOP_N: 12000
+  RPN_PROPOSAL_COUNT: 2000

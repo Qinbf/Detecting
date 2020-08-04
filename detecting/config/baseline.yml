@@ -1,0 +1,12 @@
+IF_FPN: False
+
+DATASETS:
+  NAMES: ('VOC')
+  SUBSET: ('train')
+  ROOT_DIR: ('./datasets/VOC')
+
+MODEL:
+  PRETRAIN_PATH: ('None')
+  BACKBONE: ('vgg16')
+  ANCHOR_SCALES: (128, 256, 512)
+  ANCHOR_FEATURE_STRIDES: (16, 16, 16)

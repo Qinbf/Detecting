@@ -1,0 +1,10 @@
+*.DS_Store
+*.pyc
+*.swp
+temp/*
+dist/*
+build/*
+detecting.egg-info/*
+
+# developer environments
+.vscode
