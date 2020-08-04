@@ -44,7 +44,7 @@ model = FasterRCNNModel(backbone='resnet101', weights='COCO', input_shape=(1024,
 # 预测结果并显示
 model.predict_show('test_images/000000018380.jpg')
 ```
-<img  src="https://raw.githubusercontent.com/Qinbf/detecting/master/test_images/test_images.jpg" width="50%" height="50%">
+<img  src="https://github.com/Qinbf/Detecting/blob/master/test_images/test_images.jpg" width="50%" height="50%">
 
 - **模型训练**
 
