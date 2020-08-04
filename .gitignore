@@ -4,6 +4,7 @@
 temp/*
 dist/*
 build/*
+datasets/*
 detecting.egg-info/*
 *.ipynb_checkpoints
 

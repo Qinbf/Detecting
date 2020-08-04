@@ -40,6 +40,9 @@ sudo python setup.py install
 ```python
 from detecting.build.fasterrcnn import FasterRCNNModel
 # 下载并载入预训练模型
+# weights如果为'COCO'或'VOC'表示模型使用'COCO'或'VOC'数据集训练得到
+# weights如果为'None'表示定义一个没有训练过的新模型
+# weights如果为一个路径，表示从该路径载入训练好的模型参数
 model = FasterRCNNModel(backbone='resnet101', weights='COCO', input_shape=(1024, 1024))
 # 预测结果并显示
 model.predict_show('test_images/000000018380.jpg')
@@ -63,7 +66,37 @@ model = FasterRCNNModel(cfg)
 model.fit(tf_dataset)
 ```
 
-- **更多使用方法可以查看tutorial中的内容以及源代码**
+本项目最重要的文件是detecting/config/defaults.py，里面保存着所有默认配置信息。我们可以自定义"*.yml"文件，用于修改默认配置信息。
+
+更多使用方法可以查看tutorial中的内容以及源代码。
+
+------------------
+## 训练新模型
+使用Detecting训练自己的数据可以按照VOC数据集的格式先对数据进行标注。下面把VOC数据集看成是我们自己标注好的新数据集。
+
+[VOC训练集下载](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200803100327-c9y8o7303dsgsoco?attname=VOCtrainval_06-Nov-2007.tar&e=1596533588&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:eNBMJWzJvAXLUoMzn4sqBTyf60k=)
+
+[VOC测试集下载](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200803100902-7egidf4rs2kggggg?attname=VOCtest_06-Nov-2007.tar&e=1596533617&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:TLRRBk3i0LerAb2XN4DDjnAs4cw=)
+
+理论上训练集和测试集可以存放在任意位置，不过为了方便，大家可以参考我下面介绍的方式。我们可以新建一个datasets文件夹，然后把VOC训练集和测试集都放在datasets中，文件结构如下：
+
+datasets/
+└── VOC
+    ├── test
+    │   └── VOC2007
+    │       ├── Annotations
+    │       ├── ImageSets
+    │       ├── JPEGImages
+    │       ├── SegmentationClass
+    │       └── SegmentationObject
+    └── train
+        └── VOC2007
+            ├── Annotations
+            ├── ImageSets
+            ├── JPEGImages
+            ├── SegmentationClass
+            └── SegmentationObject
+
 
 ------------------
  ## VOC 测试集实测结果
