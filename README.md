@@ -82,6 +82,12 @@ Annotations文件夹中保存这图片的标注，ImageSets文件夹保存这图
 ```
 DATASETS:
   NAMES: ('MYDATA')
+  CLASSES: ('__background__', 
+            'aeroplane', 'bicycle', 'bird', 'boat',
+            'bottle', 'bus', 'car', 'cat', 'chair',
+            'cow', 'diningtable', 'dog', 'horse',
+            'motorbike', 'person', 'pottedplant',
+            'sheep', 'sofa', 'train', 'tvmonitor')
   IMAGE_DIR: ('datasets/VOC/train/VOC2007/JPEGImages')
   LABEL_DIR: ('datasets/VOC/train/VOC2007/Annotations')
   SCALE: (1024, 1024)
@@ -98,6 +104,8 @@ NAMES: ('MYDATA')表示训练自己的数据集
 NAMES: ('COCO')表示训练'COCO'数据集
 
 NAMES: ('VOC')表示训练'VOC'数据集
+
+CLASSES: 设置数据集的标签
 
 IMAGE_DIR: 设置图片路径
 
