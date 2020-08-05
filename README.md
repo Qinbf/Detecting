@@ -54,11 +54,19 @@ model.predict_show('test_images/000000018380.jpg')
 
 ------------------
 ## 训练新模型
-使用Detecting训练自己的数据可以按照VOC数据集的格式先对数据进行标注。下面把VOC数据集看成是我们自己标注好的新数据集。
+使用Detecting训练自己的数据可以按照VOC数据集的格式先对数据进行标注。
 
-[VOC训练集下载](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200803100327-c9y8o7303dsgsoco?attname=VOCtrainval_06-Nov-2007.tar&e=1596533588&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:eNBMJWzJvAXLUoMzn4sqBTyf60k=)
+标注工具:
 
-[VOC测试集下载](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200803100902-7egidf4rs2kggggg?attname=VOCtest_06-Nov-2007.tar&e=1596533617&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:TLRRBk3i0LerAb2XN4DDjnAs4cw=)
+- [Labelme](https://github.com/wkentaro/labelme)
+- [LabelImg](https://github.com/tzutalin/labelImg)
+
+
+下面把VOC数据集看成是我们自己标注好的新数据集。
+
+- [VOC训练集下载](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200803100327-c9y8o7303dsgsoco?attname=VOCtrainval_06-Nov-2007.tar&e=1596533588&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:eNBMJWzJvAXLUoMzn4sqBTyf60k=)
+
+- [VOC测试集下载](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200803100902-7egidf4rs2kggggg?attname=VOCtest_06-Nov-2007.tar&e=1596533617&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:TLRRBk3i0LerAb2XN4DDjnAs4cw=)
 
 理论上训练集和测试集可以存放在任意位置，不过为了方便，大家可以参考我下面介绍的方式。我们可以新建一个datasets文件夹，然后把VOC训练集和测试集都放在datasets中，文件结构如下：
 
