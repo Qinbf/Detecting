@@ -155,7 +155,7 @@ model.fit(tf_dataset)
 
 本项目最重要的文件是detecting/config/defaults.py，里面保存着所有默认配置信息。我们可以自定义"*.yml"文件，用于修改默认配置信息。
 
-更多使用方法可以查看tutorial中的内容以及源代码。
+更多使用方法可以查看[tutorial](https://github.com/Qinbf/Detecting/tree/master/tutorial)中的内容以及源代码。
 
 ------------------
  ## VOC 测试集实测结果
