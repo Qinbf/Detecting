@@ -161,7 +161,7 @@ model.fit(tf_dataset)
  ## VOC 测试集实测结果
  | Detection Model | Backbone | Input resolution |  mAP |
  | :---- | :----: | :----: | :----: |
- | [FasterRCNN](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200730101828-39q2dxxb292ccwk4?attname=fasterrcnn_vgg16_1024_VOC.zip&e=1596190406&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:2H1LPFT0GEIwqU-sBqg4yGNWXm4=) | VGG16 | 1024x1024 | 53.97 |
+ | FasterRCNN| VGG16 | 1024x1024 | 53.97 |
 
   ------------------
  ## COCO 验证集实测结果
