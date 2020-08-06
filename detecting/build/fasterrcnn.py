@@ -44,37 +44,32 @@ class FasterRCNNModel():
         # 不同模型创建方式
         if self.backbone=='resnet50' and self.weights=='COCO' and self.input_shape==(640,640):
             model_name = 'fasterrcnn_resnet50_640'
-            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200727093036-qyhky8vjois40s8o?attname=fasterrcnn_resnet50_640.zip&e=1595860441&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:y_jGmVl-uexuoKYbQJkcvOAJkK4='
+            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200806044400-asssmeztmygwkoos?attname=fasterrcnn_resnet50_640.zip&e=1596708797&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:AKM8AKD-jt_kF_CsF67TezOLATk='
             # build模型
             self.model = self._load_model(model_name, base_url, [640,640,3])
         elif self.backbone=='resnet50' and self.weights=='COCO' and self.input_shape==(1024,1024):
             model_name = 'fasterrcnn_resnet50_1024'
-            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200728094544-j9vusnec9uokk8sw?attname=fasterrcnn_resnet50_1024.zip&e=1595904466&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:8aMMMnTS3gsWr_d3KbRS07Hc2DM='
+            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200806044927-lo9yzf35l4goo4kg?attname=fasterrcnn_resnet50_1024.zip&e=1596708823&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:lNZlaXfI9ZJZ2zzh1TyZlZfVh6Q='
             # build模型
             self.model = self._load_model(model_name, base_url, [1024,1024,3])
         elif self.backbone=='resnet101' and self.weights=='COCO' and self.input_shape==(640,640):
             model_name = 'fasterrcnn_resnet101_640'
-            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200728095345-mild1p6duzkg80ww?attname=fasterrcnn_resnet101_640.zip&e=1595905768&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:JMGAxZR9RAiNz4CRc1bld2UgX3E='
+            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200806045347-hswprur0qxkcgc8c?attname=fasterrcnn_resnet101_640.zip&e=1596708847&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:srHEGYWHaMPiB72RwStjeHicwsI='
             # build模型
             self.model = self._load_model(model_name, base_url, [640,640,3])    
         elif  self.backbone=='resnet101' and self.weights=='COCO' and self.input_shape==(1024,1024):
             model_name = 'fasterrcnn_resnet101_1024'
-            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200724041434-5aopoxzxgc4coc80?attname=fasterrcnn_resnet101_1024.zip&e=1595582245&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:8AKzHeuM0vBUfWplGOPzHTVe4BQ='
+            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200806045906-2zljvza7gw8ww84k?attname=fasterrcnn_resnet101_1024.zip&e=1596708967&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:QSUvEH7DYwoVyFnuK3wl1xcNg4Y='
             # build模型
             self.model = self._load_model(model_name, base_url, [1024,1024,3])
         elif  self.backbone=='resnet152' and self.weights=='COCO' and self.input_shape==(640,640):
             model_name = 'fasterrcnn_resnet152_640'
-            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200728105534-ijwagx1ofxw8044w?attname=fasterrcnn_resnet152_640.zip&e=1595908752&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:oo0SpAvx3496ZqPMCDG6UkHlQ7k='
+            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200806050247-iou2eecai28scw4g?attname=fasterrcnn_resnet152_640.zip&e=1596709010&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:6hTul4OOFYgs8l7Lr1kXfyQ1XS4='
             # build模型
             self.model = self._load_model(model_name, base_url, [640,640,3])
         elif  self.backbone=='resnet152' and self.weights=='COCO' and self.input_shape==(1024,1024):
             model_name = 'fasterrcnn_resnet152_1024'
-            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200728110123-96bcwki8qfoc4gco?attname=fasterrcnn_resnet152_1024.zip&e=1595909196&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:rEiMY--bK2VkoPFAOn7Kgc5pLdE='
-            # build模型
-            self.model = self._load_model(model_name, base_url, [1024,1024,3])
-        elif  self.backbone=='vgg16' and self.weights=='VOC' and self.input_shape==(1024,1024):
-            model_name = 'fasterrcnn_vgg16_1024_VOC'
-            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200730101828-39q2dxxb292ccwk4?attname=fasterrcnn_vgg16_1024_VOC.zip&e=1596190406&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:2H1LPFT0GEIwqU-sBqg4yGNWXm4='
+            base_url = 'http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200806050909-4k7cyn9qgsg04goo?attname=fasterrcnn_resnet152_1024.zip&e=1596709032&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:ElKKFGTHZPi7Cz_FD091r5elJ2I='
             # build模型
             self.model = self._load_model(model_name, base_url, [1024,1024,3])
 
@@ -112,6 +107,7 @@ class FasterRCNNModel():
         model_dir = tf.keras.utils.get_file(
             fname = model_name + '.zip', 
             origin = base_url,
+            cache_subdir='models',
             extract = True)
         print('load ' + model_name + ' model')
         # 得到模型所在路径

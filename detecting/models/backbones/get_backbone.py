@@ -19,7 +19,7 @@ def get_backbone(cfg):
 def backbone_vgg16(cfg):
     vgg16 = VGG16(include_top=True, weights='imagenet')
     # 不要最后的一个池化层
-    backbone = Model(inputs=vgg16.input,outputs=vgg16.get_layer('block5_conv3').output)
+    backbone = Model(inputs=vgg16.input,outputs=vgg16.get_layer('block5_conv3').output,name='backbone')
     # conv3_1之前的层不训练
     for layer in backbone.layers[:7]:
         layer.trainable = False
@@ -27,7 +27,8 @@ def backbone_vgg16(cfg):
     head_to_tail = model_util.extract_submodel(
                                           model=vgg16,
                                           inputs=vgg16.get_layer('block5_pool').output,
-                                          outputs=vgg16.get_layer('fc2').output) 
+                                          outputs=vgg16.get_layer('fc2').output,
+                                          name='head_to_tail') 
     return backbone, head_to_tail
 
 def backbone_resnet50(cfg):
@@ -36,11 +37,12 @@ def backbone_resnet50(cfg):
                              classes=None,
                              weights=None,
                              include_top=False)
-    backbone = Model(inputs=resnet50.input,outputs=resnet50.get_layer('conv4_block6_out').output)
+    backbone = Model(inputs=resnet50.input,outputs=resnet50.get_layer('conv4_block6_out').output,name='backbone')
     head_to_tail = model_util.extract_submodel(
                                     model=resnet50,
                                     inputs=resnet50.get_layer('conv4_block6_out').output,
-                                    outputs=resnet50.get_layer('conv5_block3_out').output) 
+                                    outputs=resnet50.get_layer('conv5_block3_out').output,
+                                    name='head_to_tail') 
     return backbone, head_to_tail         
 
 def backbone_resnet101(cfg):
@@ -49,11 +51,12 @@ def backbone_resnet101(cfg):
                             classes=None,
                             weights=None,
                             include_top=False)
-    backbone = Model(inputs=resnet101.input,outputs=resnet101.get_layer('conv4_block23_out').output)
+    backbone = Model(inputs=resnet101.input,outputs=resnet101.get_layer('conv4_block23_out').output,name='backbone')
     head_to_tail = model_util.extract_submodel(
                                     model=resnet101,
                                     inputs=resnet101.get_layer('conv4_block23_out').output,
-                                    outputs=resnet101.get_layer('conv5_block3_out').output) 
+                                    outputs=resnet101.get_layer('conv5_block3_out').output,
+                                    name='head_to_tail') 
     return backbone, head_to_tail 
 
 def backbone_resnet152(cfg):
@@ -62,10 +65,11 @@ def backbone_resnet152(cfg):
                               classes=None,
                               weights=None,
                               include_top=False)
-    backbone = Model(inputs=resnet152.input,outputs=resnet152.get_layer('conv4_block36_out').output)
+    backbone = Model(inputs=resnet152.input,outputs=resnet152.get_layer('conv4_block36_out').output,name='backbone')
     head_to_tail = model_util.extract_submodel(
                                     model=resnet152,
                                     inputs=resnet152.get_layer('conv4_block36_out').output,
-                                    outputs=resnet152.get_layer('conv5_block3_out').output) 
+                                    outputs=resnet152.get_layer('conv5_block3_out').output,
+                                    name='head_to_tail') 
     return backbone, head_to_tail 
 
