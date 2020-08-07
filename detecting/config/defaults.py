@@ -86,7 +86,7 @@ _C.DATASETS.NAMES = ('COCO')
 # 数据集根目录
 _C.DATASETS.ROOT_DIR = ('./datasets/COCO2017')
 # 'train','test' or 'val'
-_C.DATASETS.SUBSET = ('val')
+_C.DATASETS.SUBSET = ('train')
 # 自定义数据类别
 # 搭建模型的时候会根据类别数量来定义最后的分类数量
 _C.DATASETS.CLASSES = ('__background__','class1','class2')
