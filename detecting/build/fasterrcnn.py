@@ -193,14 +193,14 @@ class FasterRCNNModel():
         # 如果传入一个路径则根据路径读取图片
         if isinstance(inputs, str):
             inputs = load_img(inputs)
-        return self.model.predict(inputs, img_metas)
+        return self.model.predict(inputs, img_metas, box_mapping_back)
 
     # 预测并显示结果，一次只能传入一张图片
-    def predict_show(self, inputs):
+    def predict_show(self, inputs, box_mapping_back=True):
         # 如果传入一个路径则根据路径读取图片
         if isinstance(inputs, str):
             inputs = load_img(inputs)
-        pre = self.model.predict(inputs)[0]
+        pre = self.model.predict(inputs, box_mapping_back)[0]
         # 显示结果
         visualize.display_instances(image=inputs, 
                                     boxes=pre['rois'], 
