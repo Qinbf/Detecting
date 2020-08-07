@@ -6,6 +6,8 @@
 
 GitHub:[https://github.com/Qinbf/Detecting](https://github.com/Qinbf/Detecting)
 
+B站关于项目的视频介绍：https://www.bilibili.com/video/BV1rZ4y1T7Nu
+
 项目初衷是给大家提供一个既方便使用，同时又易于学习的目标检测工具。Detecting给大家提供多种预训练模型，可以直接下载使用，项目中的所有代码都有详细注释。
 
 我先挖个坑，暂时只实现了[FasterRCNN](https://arxiv.org/abs/1506.01497)算法，后续会把坑填上，把主流的一些算法都实现。希望大家可以给个**Star**支持一下，谢谢！
