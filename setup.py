@@ -8,7 +8,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name = 'detecting',      
-    version = '0.19',
+    version = '0.20',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author = 'QinBingFeng',        

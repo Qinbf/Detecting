@@ -99,7 +99,7 @@ class FasterRCNNModel():
         # 创建一个假的img用于build模型
         img = np.ones(shape)
         # build模型
-        _ = model.predict(img)
+        _ = model(img)
         return model
 
     # 载入模型

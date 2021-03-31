@@ -111,6 +111,11 @@ class FasterRCNN(tf.keras.Model):
         return [rpn_class_loss, rpn_bbox_loss, 
                 rcnn_class_loss, rcnn_bbox_loss]
 
+    # 创建模型的时候使用
+    def call(self, inputs):
+        inputs = inputs.numpy()
+        return self.predict(inputs)
+
     # 传入单张图片(3维)可以不用传img_metas
     # 传入一个批次的图片(4维)需要传img_metas
     # box_mapping_back预测的bbox结果是否映射到原始图像大小
