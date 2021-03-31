@@ -1,7 +1,7 @@
 # Detecting
  The platform for object detection research was implemented with **TensorFlow2** eager execution.
  
-[![TensorFlow 2.2](https://img.shields.io/badge/TensorFlow-2.2-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.2.0)
+[![TensorFlow 2.4](https://img.shields.io/badge/TensorFlow-2.4-FF6F00?logo=tensorflow)](https://github.com/tensorflow/tensorflow/releases/tag/v2.4.0)
 [![Python 3.6](https://img.shields.io/badge/Python-3.6-3776AB)](https://www.python.org/downloads/release/python-360/)
 
 GitHub:[https://github.com/Qinbf/Detecting](https://github.com/Qinbf/Detecting)
@@ -169,16 +169,21 @@ model.fit(tf_dataset)
  ## COCO 验证集实测结果
 | Detection Model | Backbone | Input resolution |  AP | AP<sub>50</sub> | AP<sub>75</sub> | AP<sub>S</sub> | AP<sub>M</sub> | AP<sub>L</sub> |
 | :---- | :----: | :----: | :----: | :----: |  :----: | :----: | :----: | :----: |
-| [FasterRCNN](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200727093036-qyhky8vjois40s8o?attname=fasterrcnn_resnet50_640.zip&e=1595860441&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:y_jGmVl-uexuoKYbQJkcvOAJkK4=) | ResNet50   |  640x640  |  24.7 | 39.9 | 26.0 | 5.7 | 26.1 | 42.6 |
-| [FasterRCNN](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200728094544-j9vusnec9uokk8sw?attname=fasterrcnn_resnet50_1024.zip&e=1595904466&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:8aMMMnTS3gsWr_d3KbRS07Hc2DM=) | ResNet50   | 1024x1024 |  27.5 | 43.8 | 29.5 | 10.8 | 32.6 | 41.5 |
-| [FasterRCNN](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200728095345-mild1p6duzkg80ww?attname=fasterrcnn_resnet101_640.zip&e=1595905768&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:JMGAxZR9RAiNz4CRc1bld2UgX3E=) | ResNet101  | 640x640    | 27.0 | 41.2 | 29.2 | 7.2 | 28.6 | 45.0 |
-| [FasterRCNN](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200724041434-5aopoxzxgc4coc80?attname=fasterrcnn_resnet101_1024.zip&e=1595582245&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:8AKzHeuM0vBUfWplGOPzHTVe4BQ=) | ResNet101  | 1024x1024  | 32.2 | 47.4 | 35.2 | 12.1 | 35.7 | 50.4 | 
-| [FasterRCNN](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200728105534-ijwagx1ofxw8044w?attname=fasterrcnn_resnet152_640.zip&e=1595908752&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:oo0SpAvx3496ZqPMCDG6UkHlQ7k=) | ResNet152  | 640x640    | 27.7 | 41.5 | 29.9 | 7.8 | 29.4 | 46.8 |
-| [FasterRCNN](http://ese5a4b0c7d11x.pri.qiqiuyun.net/attachment-3/20200728110123-96bcwki8qfoc4gco?attname=fasterrcnn_resnet152_1024.zip&e=1595909196&token=ExRD5wolmUnwwITVeSEXDQXizfxTRp7vnaMKJbO-:rEiMY--bK2VkoPFAOn7Kgc5pLdE=) | ResNet152  | 1024x1024 | 32.0 | 46.7 | 35.2 | 11.4 | 35.3 | 51.6
+| FasterRCNN | ResNet50   |  640x640  |  24.7 | 39.9 | 26.0 | 5.7 | 26.1 | 42.6 |
+| FasterRCNN | ResNet50   | 1024x1024 |  27.5 | 43.8 | 29.5 | 10.8 | 32.6 | 41.5 |
+| FasterRCNN | ResNet101  | 640x640    | 27.0 | 41.2 | 29.2 | 7.2 | 28.6 | 45.0 |
+| FasterRCNN | ResNet101  | 1024x1024  | 32.2 | 47.4 | 35.2 | 12.1 | 35.7 | 50.4 | 
+| FasterRCNN | ResNet152  | 640x640    | 27.7 | 41.5 | 29.9 | 7.8 | 29.4 | 46.8 |
+| FasterRCNN | ResNet152  | 1024x1024 | 32.0 | 46.7 | 35.2 | 11.4 | 35.3 | 51.6
 
+  ------------------
+ ## COCO数据集预训练模型下载地址  
+
+[百度网盘](https://pan.baidu.com/s/1LXj-kj98FB2M-KACKfOUyw)  
+密码: owi0
 
  ------------------
-## Acknowledgment:
+## Acknowledgment
 [tensorflow/models/tree/master/research/object_detection](https://github.com/tensorflow/models/tree/master/research/object_detection)
 
 [Viredery/tf-eager-fasterrcnn](https://github.com/Viredery/tf-eager-fasterrcnn)

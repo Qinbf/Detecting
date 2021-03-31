@@ -6,6 +6,7 @@ dist/*
 build/*
 datasets/*
 detecting.egg-info/*
+weights/*
 *.ipynb_checkpoints
 
 # developer environments
