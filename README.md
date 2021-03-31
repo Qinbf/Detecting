@@ -44,10 +44,9 @@ sudo python setup.py install
 ```python
 from detecting.build.fasterrcnn import FasterRCNNModel
 # 下载并载入预训练模型
-# weights如果为'COCO'或'VOC'表示模型使用'COCO'或'VOC'数据集训练得到
 # weights如果为'None'表示定义一个没有训练过的新模型
 # weights如果为一个路径，表示从该路径载入训练好的模型参数
-model = FasterRCNNModel(backbone='resnet101', weights='COCO', input_shape=(1024, 1024))
+model = FasterRCNNModel(backbone='resnet101', weights='Path/fasterrcnn_resnet101_1024.h5', input_shape=(1024, 1024))
 # 预测结果并显示
 model.predict_show('test_images/000000018380.jpg')
 ```
@@ -104,7 +103,7 @@ DATASETS:
 
 MODEL:
   BACKBONE: 'resnet101'
-  WEIGHTS: 'COCO'
+  WEIGHTS: 'Path/fasterrcnn_resnet101_1024.h5'
   INPUT_SHAPE: (1024, 1024)
   ANCHOR_SCALES: (64, 128, 256, 512)
   ANCHOR_FEATURE_STRIDES: (16, 16, 16, 16)
@@ -125,8 +124,7 @@ SCALE: 生成器产生的图片尺寸
 
 BACKBONE: 模型基本分类器
 
-WEIGHTS: 模型权值。WEIGHTS如果为'COCO'或'VOC'表示模型使用'COCO'或'VOC'数据集训练得到
-；WEIGHTS如果为'None'表示定义一个没有训练过的新模型；WEIGHTS如果为一个路径，表示从该路径载入训练好的模型参数
+WEIGHTS: 模型权值。WEIGHTS如果为'None'表示定义一个没有训练过的新模型；WEIGHTS如果为一个路径，表示从该路径载入训练好的模型参数
 
 INPUT_SHAPE: 表示模型输入图片大小
 
